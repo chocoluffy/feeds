@@ -1,0 +1,10 @@
+{
+  "cssTheme": "",
+  "theme": "obsidian",
+  "accentColor": "",
+  "interfaceFontFamily": "Bear Sans",
+  "translucency": true,
+  "enabledCssSnippets": [
+    "line-spacing"
+  ]
+}

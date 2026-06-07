@@ -1,0 +1,393 @@
+/* ============================
+   Bear Dark Graphite — Faithful Replica
+   ============================ */
+
+/* --- Dark Graphite Color Palette --- */
+.theme-dark {
+  /* Background layers — true dark */
+  --background-primary: #1a1a1a;
+  --background-primary-alt: #1e1e1e;
+  --background-secondary: #151515;
+  --background-secondary-alt: #111111;
+  --background-modifier-border: #2a2a2a;
+  --background-modifier-form-field: #202020;
+  --background-modifier-hover: rgba(255, 255, 255, 0.04);
+
+  /* Text — Bear's soft warm gray, NOT harsh white */
+  --text-normal: #d5d5d5;
+  --text-muted: #8e919a;
+  --text-faint: #5e6270;
+
+  /* Accent — Bear's shining light blue (for links only) */
+  --text-accent: #64b5f6;
+  --text-accent-hover: #90caf9;
+  --interactive-accent: #64b5f6;
+  --interactive-accent-hover: #90caf9;
+
+  /* Headings — clean bold white like Bear, NOT colored */
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-normal);
+  --h3-color: var(--text-normal);
+  --h4-color: var(--text-normal);
+  --h5-color: var(--text-normal);
+  --h6-color: var(--text-normal);
+  --inline-title-color: var(--text-normal);
+
+  /* Links */
+  --link-color: #64b5f6;
+  --link-color-hover: #90caf9;
+  --link-external-color: #64b5f6;
+  --link-external-color-hover: #90caf9;
+
+  /* Tags */
+  --tag-color: #d5d5d5;
+  --tag-background: #2a2a2a;
+  --tag-color-hover: #64b5f6;
+  --tag-background-hover: #333333;
+
+  /* List markers — blue like Bear's top-level bullets */
+  --list-marker-color: #64b5f6;
+
+  /* Code */
+  --code-normal: #b0cfe0;
+  --code-background: #202020;
+
+  /* Scrollbar — subtle */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.08);
+  --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.15);
+
+  /* Selection */
+  --text-selection: rgba(100, 181, 246, 0.15);
+  --text-highlight-bg: rgba(100, 181, 246, 0.2);
+
+  /* Nav / sidebar */
+  --nav-item-color: #999999;
+  --nav-item-color-hover: #d5d5d5;
+  --nav-item-color-active: #64b5f6;
+  --nav-item-background-hover: rgba(255, 255, 255, 0.04);
+  --nav-item-background-active: rgba(100, 181, 246, 0.08);
+
+  /* Dividers */
+  --divider-color: #2a2a2a;
+
+  /* Bold / italic */
+  --bold-color: #e8e8e8;
+  --italic-color: #d5d5d5;
+
+  /* Blockquote — muted, not accent */
+  --blockquote-border-color: #8e919a;
+}
+
+/* ============================================
+   TYPOGRAPHY — Bear's comfortable reading rhythm
+   ============================================ */
+body {
+  --font-text-override: 'Avenir Next', 'Avenir', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-interface-override: 'Avenir Next', 'Avenir', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-monospace-override: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+  --line-height-normal: 1.8;
+  --font-text-size: 16px;
+}
+
+/* --- Editor width --- */
+.markdown-source-view.mod-cm6,
+.markdown-rendered {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+/* ============================================
+   PARAGRAPHS — generous spacing for Chinese text
+   ============================================ */
+.markdown-rendered p {
+  line-height: 1.8;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.6em;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================
+   HEADINGS — Clean bold, no color, Bear-style
+   Bear uses a modest size hierarchy, all bold white.
+   ============================================ */
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-bottom: none;
+}
+
+.markdown-rendered h1 {
+  font-size: 1.6em;
+  line-height: 1.35;
+  margin-block-start: 2em;
+  margin-block-end: 0.7em;
+}
+
+.markdown-rendered h2 {
+  font-size: 1.3em;
+  line-height: 1.4;
+  margin-block-start: 2.2em;
+  margin-block-end: 0.7em;
+}
+
+.markdown-rendered h3 {
+  font-size: 1.1em;
+  line-height: 1.45;
+  margin-block-start: 1.8em;
+  margin-block-end: 0.6em;
+}
+
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-block-start: 1.2em;
+  margin-block-end: 0.3em;
+}
+
+/* Live Preview / Source mode — headings also plain white */
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  color: var(--text-normal) !important;
+}
+
+.inline-title {
+  font-weight: 700;
+  color: var(--text-normal) !important;
+}
+
+/* ============================================
+   LISTS — Bear-style: clean, moderate spacing
+   ============================================ */
+.markdown-rendered ul,
+.markdown-rendered ol {
+  padding-inline-start: 2.2em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  list-style-position: outside;
+}
+
+.markdown-rendered li {
+  line-height: 1.8;
+  margin-block-start: 0.35em;
+  margin-block-end: 0.35em;
+  padding-inline-start: 0.4em;
+}
+
+/* Nested lists — slightly tighter */
+.markdown-rendered li li {
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
+}
+
+/* Top-level bullet — filled blue circle like Bear */
+.markdown-rendered ul > li::marker {
+  color: #64b5f6;
+  font-size: 1em;
+}
+
+/* Nested bullet — hollow circle like Bear's sub-bullets */
+.markdown-rendered ul ul > li {
+  list-style-type: circle;
+}
+
+.markdown-rendered ul ul > li::marker {
+  color: #8e919a;
+  font-size: 0.9em;
+}
+
+/* Third-level — small filled gray */
+.markdown-rendered ul ul ul > li {
+  list-style-type: disc;
+}
+
+.markdown-rendered ul ul ul > li::marker {
+  color: #5e6270;
+  font-size: 0.7em;
+}
+
+.markdown-rendered ol > li::marker {
+  color: #8e919a;
+  font-size: 0.95em;
+}
+
+/* Ordered list — extra gap after number */
+.markdown-rendered ol > li {
+  padding-inline-start: 0.5em;
+}
+
+/* Task list checkboxes */
+.markdown-rendered .task-list-item {
+  margin-block-end: 0.1em;
+}
+
+.markdown-rendered input[type="checkbox"] {
+  margin-inline-end: 0.4em;
+}
+
+/* ============================================
+   LINKS — Subtle, calm like Bear
+   ============================================ */
+.markdown-rendered a {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.markdown-rendered a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* Hide external link icon for cleaner look */
+.external-link::after,
+a.external-link::after,
+.markdown-rendered a.external-link::after,
+.cm-url::after,
+.markdown-rendered .external-link::after,
+a[class*="external"]::after {
+  display: none !important;
+  content: "" !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Also hide any SVG icons inside external links */
+.external-link svg,
+a.external-link svg {
+  display: none !important;
+}
+
+/* ============================================
+   BLOCKQUOTES — Soft muted border, not accent
+   ============================================ */
+.theme-dark .markdown-rendered blockquote {
+  border-left: 3px solid #64b5f6;
+  padding: 0.3em 1em;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.6em;
+  margin-inline-start: 0;
+  font-style: normal;
+  color: #b0b3ba;
+  opacity: 0.9;
+  background: none;
+}
+
+/* Nested blockquote borders — thinner, muted */
+.theme-dark .markdown-rendered blockquote blockquote {
+  border-left: 2px solid #4a4a4a;
+}
+
+/* ============================================
+   CODE — Subtle
+   ============================================ */
+.theme-dark .markdown-rendered pre {
+  background: #202020;
+  border-radius: 8px;
+  padding: 1em 1.2em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  line-height: 1.5;
+  border: 1px solid #2a2a2a;
+}
+
+.theme-dark .markdown-rendered code {
+  background: #202020;
+  color: #b0cfe0;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+}
+
+/* ============================================
+   HORIZONTAL RULE — Very subtle
+   ============================================ */
+.markdown-rendered hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+  opacity: 0.3;
+}
+
+/* ============================================
+   BOLD — Clear but not overpowering
+   ============================================ */
+.markdown-rendered strong {
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+/* ============================================
+   TAGS — Pill style
+   ============================================ */
+.theme-dark .tag {
+  background: #2a2a2a;
+  color: #d5d5d5;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.88em;
+}
+
+.theme-dark .tag:hover {
+  background: #333333;
+  color: #64b5f6;
+}
+
+/* ============================================
+   IMAGES
+   ============================================ */
+.markdown-rendered img {
+  border-radius: 6px;
+  margin-block-start: 0.8em;
+  margin-block-end: 0.8em;
+}
+
+/* ============================================
+   CURSOR — Accent colored
+   ============================================ */
+.theme-dark .cm-editor .cm-cursor {
+  border-left-color: #64b5f6 !important;
+  border-left-width: 2px !important;
+}
+
+/* ============================================
+   LIVE PREVIEW — Match reading view line height
+   ============================================ */
+.cm-s-obsidian .cm-line {
+  line-height: 1.8;
+}
+
+/* ============================================
+   ACTIVE LINE & SELECTION
+   ============================================ */
+.theme-dark .cm-editor .cm-activeLine {
+  background: rgba(100, 181, 246, 0.03);
+}
+
+.theme-dark .cm-editor .cm-selectionBackground,
+.theme-dark ::selection {
+  background: rgba(100, 181, 246, 0.15) !important;
+}
+
+/* ============================================
+   READING VIEW — Extra breathing room
+   ============================================ */
+.markdown-reading-view .markdown-preview-section {
+  padding-left: 2em;
+  padding-right: 2em;
+}
